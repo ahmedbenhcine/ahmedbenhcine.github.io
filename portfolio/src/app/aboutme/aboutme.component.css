@@ -1,14 +1,17 @@
+/* Global Section Styling */
 .section {
   padding: 60px 20px;
-  background: #f9f9f9;
+  background: #fff; /* unified white background */
 }
 
+/* About Me Section */
 .about-content {
   max-width: 900px;
   margin: auto;
   text-align: left;
 }
 
+/* Skills Grid Layout */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -16,12 +19,14 @@
   margin-top: 20px;
 }
 
+/* Skill Group Headers */
 .skill-group h4 {
   margin-bottom: 10px;
   color: #007bff;
   font-weight: 600;
 }
 
+/* Skill Items */
 .skill-group ul {
   list-style: none;
   padding: 0;
@@ -41,6 +46,7 @@
   background: #e6f0ff;
 }
 
+/* Download CV Button */
 .download-btn {
   display: inline-flex;
   align-items: center;
@@ -62,3 +68,51 @@
   margin-right: 8px;
   font-size: 1.2rem;
 }
+/* Timeline Section */
+.timeline-section {
+  margin-top: 40px;
+}
+
+.timeline-subtitle {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-left: 4px solid #007bff;
+  padding-left: 12px;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline li {
+  margin-bottom: 30px;
+}
+
+.timeline-content {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.timeline-content h4 {
+  margin: 0 0 10px;
+  color: #007bff;
+  font-size: 1.1rem;
+}
+
+.date-tag {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #666;
+  margin-left: 10px;
+}
+
+
+
+
+
