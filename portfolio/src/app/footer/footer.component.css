@@ -1,7 +1,15 @@
 .footer {
+  width: 100%;               /* full width */
   background: #111;
   color: #ccc;
   text-align: center;
   padding: 30px 20px;
   font-size: 0.9rem;
+  box-sizing: border-box;   /* make sure padding doesn’t add width */
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;            /* center content */
 }
