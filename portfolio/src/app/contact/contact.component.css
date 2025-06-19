@@ -1,0 +1,51 @@
+.contact-section {
+  max-width: 600px;
+  margin: 60px auto;
+  text-align: center;
+  padding: 20px;
+  background: #f5f8fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+/* Brand colors */
+.contact-link.twitter {
+  background-color: #1da1f2;
+}
+.contact-link.github {
+  background-color: #333;
+}
+.contact-link.linkedin {
+  background-color: #0077b5;
+}
+
+.contact-link:hover {
+  opacity: 0.85;
+  text-decoration: underline;
+}
