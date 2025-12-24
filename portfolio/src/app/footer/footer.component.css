@@ -1,15 +1,33 @@
 .footer {
-  width: 100%;               /* full width */
-  background: #111;
-  color: #ccc;
+  width: 100%;
+  background: linear-gradient(135deg, var(--text-primary) 0%, #0f172a 100%);
+  color: rgba(255, 255, 255, 0.8);
   text-align: center;
-  padding: 30px 20px;
-  font-size: 0.9rem;
-  box-sizing: border-box;   /* make sure padding doesn’t add width */
-  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.3);
+  padding: 2.5rem 2rem;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.5), transparent);
+}
+
+.footer p {
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .footer .container {
   max-width: 1200px;
-  margin: 0 auto;            /* center content */
+  margin: 0 auto;
 }
