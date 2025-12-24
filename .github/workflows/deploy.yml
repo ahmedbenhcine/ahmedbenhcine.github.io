@@ -1,0 +1,53 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: portfolio/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ./portfolio
+        run: npm ci
+
+      - name: Build Angular app
+        working-directory: ./portfolio
+        run: npm run build -- --configuration production
+
+      - name: Copy CNAME to docs
+        run: |
+          if [ -f CNAME ]; then
+            cp CNAME docs/CNAME
+          fi
+
+      - name: Commit and push built files
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add docs/
+          if ! git diff --staged --quiet; then
+            git commit -m "Build: Update docs with latest changes [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
+
